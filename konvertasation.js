@@ -60,11 +60,16 @@ var VONG = {
   konversator: function (element) {
     if (typeof(element) != 'undefined') { 
       for (var x = 0; x < VONG.VONGliste.length; x++) {
-        element.innerHTML = element.innerHTML.split(VONG.VONGliste[x].deutsch.substring(0,1).toUpperCase() + VONG.VONGliste[x].deutsch.substring(1, VONG.VONGliste[x].deutsch.length - 1)).join(VONG.VONGliste[x].vong.substring(0,1).toUpperCase() + VONG.VONGliste[x].vong.substring(1, VONG.VONGliste[x].vong.length - 1))
-        element.innerHTML = element.innerHTML.split(' '+ VONG.VONGliste[x].deutsch).join(' '+ VONG.VONGliste[x].vong)
+          var walk = document.createTreeWalker(element,NodeFilter.SHOW_TEXT,null,false);
+          while (item = walk.nextNode()) {
+              if (item.nodeName == '#text') {
+                  item.textContent = item.textContent.split(VONG.VONGliste[x].deutsch.substring(0,1).toUpperCase() + VONG.VONGliste[x].deutsch.substring(1, VONG.VONGliste[x].deutsch.length - 1)).join(VONG.VONGliste[x].vong.substring(0,1).toUpperCase() + VONG.VONGliste[x].vong.substring(1, VONG.VONGliste[x].vong.length - 1))
+                  item.textContent = item.textContent.split(' '+ VONG.VONGliste[x].deutsch).join(' '+ VONG.VONGliste[x].vong)
+              }
+          }
+        }
         element.classList.add(VONG.className)
       }
     }
-  }
 }
 VONG.start()
