@@ -5,7 +5,7 @@ var VONG = {
   matchList: ['h1', 'h2', 'article p', 'p', 'span'],
   VONGliste: [
     {deutsch: "eine", vong: "1me"},
-    {deutsch: "ein", vong: "1"]},
+    {deutsch: "ein", vong: "1"},
     {deutsch: "von", vong: "vong"},
     {deutsch: "bist", vong: "bimst"},
     {deutsch: "vom", vong: "vong"},
@@ -43,12 +43,13 @@ var VONG = {
   },
   konversator: function (element) {
     if (typeof(element) != 'undefined') { 
-      for (var x = 0; x < VONGliste.length; x++) {
-        element.textContent = element[0].textContent.split(' '+ VONGliste[x].deutsch +' ').join(' '+ VONGliste[x].vong +' ')
-        element.textContent = element[0].textContent.split(' '+ VONGliste[x].deutsch +'.').join(' '+ VONGliste[x].vong +'.')
-        // element.textContent = element[0].textContent.split(' '+ VONGliste[x].deutsch +'.').join(' '+ VONGliste[x].vong +'.')
+      for (var x = 0; x < VONG.VONGliste.length; x++) {
+        element.innerHTML = element.innerHTML.split(VONG.VONGliste[x].deutsch.substring(0,1).toUpperCase() + VONG.VONGliste[x].deutsch.substring(1, VONG.VONGliste[x].deutsch.length - 1) +' ').join(' '+ VONG.VONGliste[x].vong +' ')
+        element.innerHTML = element.innerHTML.split(' '+ VONG.VONGliste[x].deutsch +' ').join(' '+ VONG.VONGliste[x].vong +' ')
+        element.innerHTML = element.innerHTML.split(' '+ VONG.VONGliste[x].deutsch +'.').join(' '+ VONG.VONGliste[x].vong +'.')
         element.classList.add(VONG.className)
       }
     }
   }
 }
+VONG.start()
