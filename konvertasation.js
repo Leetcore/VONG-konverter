@@ -1,11 +1,18 @@
 var VONG = {
   counter: 0,
-  timer: 500,
+  timer: 100,
   className: "itsVONG",
-  matchList: ['h1', 'h2', 'article p', 'p', 'span'],
+  matchList: ['h1', 'h2', 'h3', 'h4', 'h5', 'article p', 'p', 'span'],
   VONGliste: [
-    {deutsch: "eine", vong: "1me"},
+    {deutsch: "eine", vong: "1"},
+    {deutsch: "eins", vong: "1"},
+    {deutsch: "einen", vong: "1"},
+    {deutsch: "einem", vong: "1"},
     {deutsch: "ein", vong: "1"},
+    {deutsch: "der", vong: "de"},
+    {deutsch: "die", vong: "de"},
+    {deutsch: "das", vong: "de"},
+    {deutsch: "was", vong: "watt"},
     {deutsch: "von", vong: "vong"},
     {deutsch: "bist", vong: "bimst"},
     {deutsch: "vom", vong: "vong"},
@@ -13,9 +20,19 @@ var VONG = {
     {deutsch: "bin", vong: "bims"},
     {deutsch: "bist", vong: "bimst"},
     {deutsch: "mein", vong: "meim"},
+    {deutsch: "freund", vong: "Freumd"},
+    {deutsch: "ist", vong: "isd"},
     {deutsch: "sprache", vong: "sprech"},
     {deutsch: "habe", vong: "han"},
-    {deutsch: "hab", vong: "han"}, 
+    {deutsch: "hab", vong: "han"},
+    {deutsch: "hat", vong: "han"},
+    {deutsch: "nicht", vong: "nid"},
+    {deutsch: "gut", vong: "vong Nicigkeit her"},
+    {deutsch: "mann", vong: "Boi"},
+    {deutsch: "frau", vong: "Gurl"},
+    {deutsch: "angela", vong: "Angelo"},
+    {deutsch: "geld", vong: "Money"},
+    {deutsch: "merkel", vong: "Merte"},
     {deutsch: "wir", vong: "sims"},
     {deutsch: "ihr", vong: "seit"},
     {deutsch: "sie", vong: "sims"}
@@ -44,7 +61,8 @@ var VONG = {
   konversator: function (element) {
     if (typeof(element) != 'undefined') { 
       for (var x = 0; x < VONG.VONGliste.length; x++) {
-        element.innerHTML = element.innerHTML.split(VONG.VONGliste[x].deutsch.substring(0,1).toUpperCase() + VONG.VONGliste[x].deutsch.substring(1, VONG.VONGliste[x].deutsch.length - 1) +' ').join(' '+ VONG.VONGliste[x].vong +' ')
+        element.innerHTML = element.innerHTML.split(VONG.VONGliste[x].deutsch.substring(0,1).toUpperCase() + VONG.VONGliste[x].deutsch.substring(1, VONG.VONGliste[x].deutsch.length - 1) +' ').join(VONG.VONGliste[x].vong +' ')
+        element.innerHTML = element.innerHTML.split(VONG.VONGliste[x].deutsch.substring(0,1).toUpperCase() + VONG.VONGliste[x].deutsch.substring(1, VONG.VONGliste[x].deutsch.length - 1) +'.').join(VONG.VONGliste[x].vong +'.')
         element.innerHTML = element.innerHTML.split(' '+ VONG.VONGliste[x].deutsch +' ').join(' '+ VONG.VONGliste[x].vong +' ')
         element.innerHTML = element.innerHTML.split(' '+ VONG.VONGliste[x].deutsch +'.').join(' '+ VONG.VONGliste[x].vong +'.')
         element.classList.add(VONG.className)
