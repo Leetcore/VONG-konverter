@@ -6,12 +6,9 @@
   "version": "1.0",
   "content_scripts": [
   {
-   "matches": ["*"],
+   "matches": ["http://*/*", "https://*/*"],
    "js": ["konvertasation.js"],
    "run_at": "document_end"
   }
- ],
-  "permissions": [
-    "*"
-  ]
+ ]
 }
