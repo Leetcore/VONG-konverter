@@ -1,6 +1,6 @@
 var VONG = {
   counter: 0,
-  timer: 100,
+  timer: 500,
   className: "itsVONG",
   matchList: ['h1', 'h2', 'h3', 'h4', 'h5', 'article p', 'p', 'span'],
   VONGliste: [
@@ -41,13 +41,10 @@ var VONG = {
   start: function () {
     // finde 1 inhalt wo nicht vong ist
     for (var matchIndex = 0; matchIndex < VONG.matchList.length; matchIndex++) {
-      setTimeout(() => {
-        var elements = document.querySelectorAll(VONG.matchList[matchIndex] +':not(.'+ VONG.className +')')
-        for (var index = 0; index < elements.length; index++) {
-          // do magic
-          VONG.konversator(elements[index])
-        }
-      }, 0)
+      var element = document.querySelector(VONG.matchList[matchIndex] +':not(.'+ VONG.className +')')
+      if (element != null) {
+        VONG.konversator(element)
+      }
     }
 
     // round round baby round round
@@ -56,8 +53,8 @@ var VONG = {
   konversator: function (element) {
     if (typeof(element) != 'undefined') { 
       for (var x = 0; x < VONG.VONGliste.length; x++) {
-        element.innerHTML = element.innerHTML.split(VONG.VONGliste[x].deutsch.substring(0,1).toUpperCase() + VONG.VONGliste[x].deutsch.substring(1, VONG.VONGliste[x].deutsch.length - 1)).join(VONG.VONGliste[x].vong.substring(0,1).toUpperCase() + VONG.VONGliste[x].vong.substring(1, VONG.VONGliste[x].vong.length - 1))
-        element.innerHTML = element.innerHTML.split(' '+ VONG.VONGliste[x].deutsch).join(' '+ VONG.VONGliste[x].vong)
+        element.innerText = element.innerText.split(VONG.VONGliste[x].deutsch.substring(0,1).toUpperCase() + VONG.VONGliste[x].deutsch.substring(1, VONG.VONGliste[x].deutsch.length - 1)).join(VONG.VONGliste[x].vong.substring(0,1).toUpperCase() + VONG.VONGliste[x].vong.substring(1, VONG.VONGliste[x].vong.length - 1))
+        element.innerText = element.innerText.split(' '+ VONG.VONGliste[x].deutsch).join(' '+ VONG.VONGliste[x].vong)
         element.classList.add(VONG.className)
       }
     }
