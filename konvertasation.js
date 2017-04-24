@@ -35,7 +35,15 @@ var VONG = {
     {deutsch: "merkel", vong: "Merte"},
     {deutsch: "wir", vong: "sims"},
     {deutsch: "ihr", vong: "seit"},
-    {deutsch: "sie", vong: "sims"}
+    {deutsch: "sie", vong: "sims"},
+    {deutsch: "ik", vong: "ick"},
+    {deutsch: "ent", vong: "enten"},
+    {deutsch: "ver", vong: "fer"},
+    {deutsch: "ten", vong: "den"},
+    {deutsch: "keit", vong: "keitigen"},
+    {deutsch: "tum", vong: "tumm"},
+    {deutsch: "fli", vong: "fly"},
+    {deutsch: "tion", vong: "zon"}
   ],
   start: function () {
     // finde 1 inhalt wo nicht vong ist
