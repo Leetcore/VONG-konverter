@@ -21,20 +21,24 @@ var VONG = {
     {deutsch: "sie", vong: "sims"}
   ],
   start: function () {
-    // finde 1 inhalt
+    // finde 1 inhalt wo nicht vong ist
     var element = document.querySelector(VONG.matchList[VONG.counter] +':not(.'+ VONG.className +')')
     
-    // finde mehr inhalt wenn 0 inhalt
+    // finde mehr inhalt
     if (element == null ) {
       // wieder vong vorne
       if (VONG.counter == VONG.matchList.length) {
         VONG.counter = 0
       } else {
+        // finde nächsten match
         VONG.counter++
       }
     } else {
+      // do magic
       VONG.konversator(element)
     }
+    
+    // round round baby round round
     setTimeout(VONG.start, VONG.timer)
   },
   konversator: function (element) {
