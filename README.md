@@ -3,4 +3,4 @@
 
 <img src="VONG.png"/>
 
-Link folgt.
+Chrome: https://chrome.google.com/webstore/detail/knmcojmloapdipjadeeoililhhlpclga/publish-delayed?hl=de
