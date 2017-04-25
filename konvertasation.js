@@ -1,6 +1,5 @@
 var VONG = {
-  counter: 0,
-  timer: 500,
+  timer: 200,
   className: "itsVONG",
   matchList: ['h1', 'h2', 'h3', 'h4', 'h5', 'article p', 'p', 'span'],
   VONGliste: [
@@ -16,6 +15,7 @@ var VONG = {
     {deutsch: "bist", vong: "bimst"},
     {deutsch: "von", vong: "vong"},
     {deutsch: "vom", vong: "vong"},
+    {deutsch: "und", vong: "umd"},
     {deutsch: "bin", vong: "bims"},
     {deutsch: "bist", vong: "bimst"},
     {deutsch: "mein", vong: "meim"},
@@ -30,6 +30,8 @@ var VONG = {
     {deutsch: "gut", vong: "vong Nicigkeit her"},
     {deutsch: "mann", vong: "Boi"},
     {deutsch: "frau", vong: "Gurl"},
+    {deutsch: "schön", vong: "nice"},
+    {deutsch: "schöne", vong: "nices"},
     {deutsch: "angela", vong: "Angelo"},
     {deutsch: "geld", vong: "Money"},
     {deutsch: "merkel", vong: "Merte"},
@@ -37,39 +39,50 @@ var VONG = {
     {deutsch: "ihr", vong: "seit"},
     {deutsch: "sie", vong: "sims"},
     {deutsch: "ik", vong: "ick"},
+    {deutsch: "kom", vong: "kum"},
     {deutsch: "ent", vong: "enten"},
     {deutsch: "ver", vong: "fer"},
     {deutsch: "ten", vong: "den"},
     {deutsch: "keit", vong: "keitigen"},
     {deutsch: "tum", vong: "tumm"},
-    {deutsch: "fli", vong: "fly"},
-    {deutsch: "tion", vong: "zon"}
+    {deutsch: "flie", vong: "fly"},
+    {deutsch: "tion", vong: "zon"},
+    {deutsch: "heb", vong: "herb"},
+    {deutsch: "am", vong: "an"}
   ],
   start: function () {
-    // finde 1 inhalt wo nicht vong ist
-    for (var matchIndex = 0; matchIndex < VONG.matchList.length; matchIndex++) {
-      var element = document.querySelector(VONG.matchList[matchIndex] +':not(.'+ VONG.className +')')
-      if (element != null) {
-        VONG.konversator(element)
-      }
-    }
-
-    // round round baby round round
-    setTimeout(VONG.start, VONG.timer)
-  },
-  konversator: function (element) {
-    if (typeof(element) != 'undefined') { 
-      for (var x = 0; x < VONG.VONGliste.length; x++) {
-          var walk = document.createTreeWalker(element,NodeFilter.SHOW_TEXT,null,false);
-          while (item = walk.nextNode()) {
-              if (item.nodeName == '#text') {
-                  item.textContent = item.textContent.split(VONG.VONGliste[x].deutsch.substring(0,1).toUpperCase() + VONG.VONGliste[x].deutsch.substring(1, VONG.VONGliste[x].deutsch.length - 1)).join(VONG.VONGliste[x].vong.substring(0,1).toUpperCase() + VONG.VONGliste[x].vong.substring(1, VONG.VONGliste[x].vong.length - 1))
-                  item.textContent = item.textContent.split(' '+ VONG.VONGliste[x].deutsch).join(' '+ VONG.VONGliste[x].vong)
+      try {
+          // finde 1 inhalt wo nicht vong ist
+          for (var matchIndex = 0; matchIndex < VONG.matchList.length; matchIndex++) {
+              var element = document.querySelector(VONG.matchList[matchIndex] +':not(.'+ VONG.className +')')
+              if (element != null) {
+                  VONG.konversator(element)
               }
           }
-        }
-        element.classList.add(VONG.className)
+      } catch (e) {
+          console.log(e.message)
       }
+
+       // round round baby round round
+       setTimeout(VONG.start, VONG.timer)
+  },
+  konversator: function (element) {
+      try {
+          if (typeof(element) != 'undefined') { 
+              for (var x = 0; x < VONG.VONGliste.length; x++) {
+                  var walk = document.createTreeWalker(element,NodeFilter.SHOW_TEXT,null,false);
+                  while (item = walk.nextNode()) {
+                      if (item.nodeName == '#text') {
+                          item.nodeValue = item.nodeValue.split(VONG.VONGliste[x].deutsch.substring(0,1).toUpperCase() + VONG.VONGliste[x].deutsch.substring(1, VONG.VONGliste[x].deutsch.length)).join(VONG.VONGliste[x].vong.substring(0,1).toUpperCase() + VONG.VONGliste[x].vong.substring(1, VONG.VONGliste[x].vong.length))
+                          item.nodeValue = item.nodeValue.split(' '+ VONG.VONGliste[x].deutsch).join(' '+ VONG.VONGliste[x].vong)
+                      }
+                  }
+              }
+              element.classList.add(VONG.className)
+          }
+    } catch (e) {
+        console.log(e.message)
     }
+  }
 }
 VONG.start()
