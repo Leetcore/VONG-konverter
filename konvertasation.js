@@ -1,5 +1,5 @@
 var VONG = {
-  timer: 100,
+  timer: 50,
   className: "itsVONG",
   matchList: ['h1', 'h2', 'h3', 'h4', 'h5', 'article p', 'p', 'span'],
   VONGliste: [
