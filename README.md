@@ -3,4 +3,4 @@
 
 <img src="VONG.png"/>
 
-Chrome: https://chrome.google.com/webstore/detail/knmcojmloapdipjadeeoililhhlpclga/publish-delayed?hl=de
+Chrome: https://chrome.google.com/webstore/detail/vong-konverter/knmcojmloapdipjadeeoililhhlpclga
