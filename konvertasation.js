@@ -49,7 +49,8 @@ var VONG = {
     {deutsch: "tion", vong: "zon"},
     {deutsch: "heb", vong: "herb"},
     {deutsch: "am", vong: "an"},
-    {deutsch: "!", vong: " lol!"}
+    {deutsch: "!", vong: " lol!"},
+    {deutsch: "eu", vong: "oi"}
   ],
   start: function () {
       try {
