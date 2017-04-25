@@ -57,6 +57,7 @@ var VONG = {
     {deutsch: "am", vong: "an"},
     {deutsch: "!", vong: " lol!"},
     {deutsch: "eu", vong: "oi"},
+    {deutsch: "ei", vong: "oi"},
     {deutsch: "äu", vong: "oi"},
     {deutsch: "ge", vong: "gem"}
   ],
