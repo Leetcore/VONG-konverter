@@ -47,7 +47,7 @@ var VONG = {
     {deutsch: "kom", vong: "kum"},
     {deutsch: "ent", vong: "enten"},
     {deutsch: "ver", vong: "fer"},
-    {deutsch: "ten", vong: "den"},
+    {deutsch: "ten", vong: "tem"},
     {deutsch: "keit", vong: "keitigen"},
     {deutsch: "tum", vong: "tumm"},
     {deutsch: "flie", vong: "fly"},
