@@ -59,6 +59,7 @@ var VONG = {
     {deutsch: "eu", vong: "oi"},
     {deutsch: "ei", vong: "oi"},
     {deutsch: "äu", vong: "oi"},
+    {deutsch: "br", vong: "pr"},
     {deutsch: "ge", vong: "gem"}
   ],
   start: function () {
