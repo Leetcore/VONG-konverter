@@ -26,8 +26,10 @@ var VONG = {
     {deutsch: "haben", vong: "hannen"},
     {deutsch: "hab", vong: "han"},
     {deutsch: "hat", vong: "han"},
+    {deutsch: "hast", vong: "hanst"},
     {deutsch: "nicht", vong: "nid"},
     {deutsch: "gut", vong: "vong Nicigkeit her"},
+    {deutsch: "ech", vong: "eck"},
     {deutsch: "mann", vong: "Boi"},
     {deutsch: "frau", vong: "Gurl"},
     {deutsch: "schön", vong: "nice"},
@@ -50,7 +52,8 @@ var VONG = {
     {deutsch: "heb", vong: "herb"},
     {deutsch: "am", vong: "an"},
     {deutsch: "!", vong: " lol!"},
-    {deutsch: "eu", vong: "oi"}
+    {deutsch: "eu", vong: "oi"},
+    {deutsch: "äu", vong: "oi"}
   ],
   start: function () {
       try {
