@@ -1,7 +1,7 @@
 var VONG = {
-  timer: 25,
+  timer: 250,
   className: "itsVONG",
-  matchList: ['h1', 'h2', 'h3', 'h4', 'h5', 'article p', 'p', 'span', 'a'],
+  matchList: ['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'span', 'a'],
   VONGliste: [
     {deutsch: "eine", vong: "1"},
     {deutsch: "eins", vong: "1"},
@@ -13,6 +13,7 @@ var VONG = {
     {deutsch: "das", vong: "de"},
     {deutsch: "was", vong: "watt"},
     {deutsch: "bist", vong: "bimst"},
+    {deutsch: "vong", vong: "von"},
     {deutsch: "von", vong: "vong"},
     {deutsch: "vom", vong: "vong"},
     {deutsch: "und", vong: "umd"},
@@ -75,9 +76,9 @@ var VONG = {
       try {
           // finde 1 inhalt wo nicht vong ist
           for (var matchIndex = 0; matchIndex < VONG.matchList.length; matchIndex++) {
-              var element = document.querySelector(VONG.matchList[matchIndex] +':not(.'+ VONG.className +')')
-              if (element != null) {
-                  VONG.konversator(element)
+              var elements = document.querySelectorAll(VONG.matchList[matchIndex] +':not(.'+ VONG.className +')')
+              for (var elementIndex = 0; elementIndex < elements.length; elementIndex++) {
+                  VONG.konversator(elements[elementIndex])
               }
           }
       } catch (e) {
@@ -89,7 +90,8 @@ var VONG = {
   },
   konversator: function (element) {
       try {
-          if (typeof(element) != 'undefined') { 
+          if (typeof(element) != 'undefined') {
+              element.classList.add(VONG.className)
               for (var x = 0; x < VONG.VONGliste.length; x++) {
                   var walk = document.createTreeWalker(element,NodeFilter.SHOW_TEXT,null,false);
                   while (item = walk.nextNode()) {
@@ -99,7 +101,6 @@ var VONG = {
                       }
                   }
               }
-              element.classList.add(VONG.className)
           }
     } catch (e) {
         console.log(e.message)
