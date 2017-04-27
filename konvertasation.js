@@ -57,11 +57,12 @@ var VONG = {
     {deutsch: "am", vong: "an"},
     {deutsch: "!", vong: " lol!"},
     {deutsch: "eu", vong: "oi"},
-    {deutsch: "ei", vong: "oi"},
+    {deutsch: "ei", vong: "ai"},
     {deutsch: "äu", vong: "oi"},
     {deutsch: "br", vong: "pr"},
-    {deutsch: "ge", vong: "gem"},
-    {deutsch: "er", vong: "erl"}
+    {deutsch: "halb", vong: "semi"},
+    {deutsch: "funktioniert", vong: "worked"},
+    {deutsch: "ende", vong: "drop"}
   ],
   start: function () {
       try {
