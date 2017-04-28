@@ -1,7 +1,7 @@
 var VONG = {
   timer: 250,
   className: "itsVONG",
-  matchList: ['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'span', 'a'],
+  matchList: ['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'button', 'span', 'a'],
   VONGliste: [
     {deutsch: "eine", vong: "1"},
     {deutsch: "eins", vong: "1"},
@@ -93,8 +93,11 @@ var VONG = {
           if (typeof(element) != 'undefined') {
               element.classList.add(VONG.className)
               for (var x = 0; x < VONG.VONGliste.length; x++) {
-                  var walk = document.createTreeWalker(element,NodeFilter.SHOW_TEXT,null,false);
+                  var walk = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
                   while (item = walk.nextNode()) {
+                      if (item.nodeName == 'PRE') {
+                        break;
+                      }
                       if (item.nodeName == '#text') {
                           item.nodeValue = item.nodeValue.split(VONG.VONGliste[x].deutsch.substring(0,1).toUpperCase() + VONG.VONGliste[x].deutsch.substring(1, VONG.VONGliste[x].deutsch.length)).join(VONG.VONGliste[x].vong.substring(0,1).toUpperCase() + VONG.VONGliste[x].vong.substring(1, VONG.VONGliste[x].vong.length))
                           item.nodeValue = item.nodeValue.split(' '+ VONG.VONGliste[x].deutsch).join(' '+ VONG.VONGliste[x].vong)
