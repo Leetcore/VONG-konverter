@@ -1,5 +1,5 @@
 var VONG = {
-  timer: 250,
+  timer: 500,
   className: "itsVONG",
   matchList: ['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'button', 'span', 'a'],
   VONGliste: [
@@ -40,6 +40,8 @@ var VONG = {
     {deutsch: "geld", vong: "Money"},
     {deutsch: "zeit", vong: "time"},
     {deutsch: "gespräch", vong: "realtalk"},
+    {deutsch: "nur", vong: "only"},
+    {deutsch: "warum", vong: "why"},
     {deutsch: "wir", vong: "sims"},
     {deutsch: "ihr", vong: "seit"},
     {deutsch: "sie", vong: "sims"},
@@ -55,7 +57,6 @@ var VONG = {
     {deutsch: "tion", vong: "zon"},
     {deutsch: "heb", vong: "herb"},
     {deutsch: "ht", vong: "hd"},
-    {deutsch: "am", vong: "an"},
     {deutsch: "!", vong: " lol!"},
     {deutsch: "haft", vong: "hanft"},
     {deutsch: "nehm", vong: "nemm"},
@@ -65,19 +66,35 @@ var VONG = {
     {deutsch: "fällt", vong: "feld"},
     {deutsch: "ei", vong: "ai"},
     {deutsch: "den", vong: "dem"},
-    {deutsch: "ini", vong: "imim"},
     {deutsch: "ig", vong: "ick"},
     {deutsch: "br", vong: "pr"},
     {deutsch: "halb", vong: "semi"},
     {deutsch: "funktioniert", vong: "worked"},
-    {deutsch: "ende", vong: "drop"}
+    {deutsch: "ende", vong: "drop"},
+    {deutsch: "teilen", vong: "teilem"},
+    {deutsch: "gefällt mir", vong: "gefellt mir"},
+    {deutsch: "sekunde", vong: "sekumde"},
+    {deutsch: "minuten", vong: "minurtem"},
+    {deutsch: "rabatt", vong: "rabatz"},
+    {deutsch: "echt", vong: "real"},
+    {deutsch: "schwer", vong: "real"},
+    {deutsch: "zon", vong: "zorn"},
+    {deutsch: "display", vong: "dissplay"},
+    {deutsch: "gehe", vong: "walk"},
+    {deutsch: "gingen", vong: "walkten"},
+    {deutsch: "ging", vong: "walkte"},    
+    {deutsch: "nutzen", vong: "nützen"},
+    {deutsch: "nutzen", vong: "nützen"},
+    {deutsch: "nächst", vong: "näschd"},
+    {deutsch: "lecker", vong: "legger"},
+    {deutsch: "gerichte", vong: "geriechte"}
   ],
   start: function () {
       try {
           // finde 1 inhalt wo nicht vong ist
           for (var matchIndex = 0; matchIndex < VONG.matchList.length; matchIndex++) {
               var elements = document.querySelectorAll(VONG.matchList[matchIndex] +':not(.'+ VONG.className +')')
-              for (var elementIndex = 0; elementIndex < elements.length; elementIndex++) {
+              for (var elementIndex = 0; elementIndex < elements.length && elementIndex < 50; elementIndex++) {
                   VONG.konversator(elements[elementIndex])
               }
           }
@@ -95,7 +112,7 @@ var VONG = {
               for (var x = 0; x < VONG.VONGliste.length; x++) {
                   var walk = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
                   while (item = walk.nextNode()) {
-                      if (item.nodeName == 'PRE') {
+                      if (item.nodeName == 'PRE' || item.nodeName == 'TEXTAREA') {
                         break;
                       }
                       if (item.nodeName == '#text') {
