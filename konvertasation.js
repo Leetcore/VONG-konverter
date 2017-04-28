@@ -30,7 +30,6 @@ var VONG = {
     {deutsch: "hast", vong: "hanst"},
     {deutsch: "nicht", vong: "nid"},
     {deutsch: "gut", vong: "fly"},
-    {deutsch: "ech", vong: "eck"},
     {deutsch: "mann", vong: "Boi"},
     {deutsch: "frau", vong: "Gurl"},
     {deutsch: "schön", vong: "nice"},
@@ -48,7 +47,6 @@ var VONG = {
     {deutsch: "ik", vong: "ick"},
     {deutsch: "ff", vong: "ph"},
     {deutsch: "kom", vong: "kum"},
-    {deutsch: "ent", vong: "enten"},
     {deutsch: "ver", vong: "fer"},
     {deutsch: "ten", vong: "tem"},
     {deutsch: "keit", vong: "keitigen"},
@@ -72,7 +70,7 @@ var VONG = {
     {deutsch: "funktioniert", vong: "worked"},
     {deutsch: "ende", vong: "drop"},
     {deutsch: "teilen", vong: "teilem"},
-    {deutsch: "gefällt mir", vong: "gefellt mir"},
+    {deutsch: "gefällt", vong: "gefellt"},
     {deutsch: "sekunde", vong: "sekumde"},
     {deutsch: "minuten", vong: "minurtem"},
     {deutsch: "rabatt", vong: "rabatz"},
@@ -87,7 +85,10 @@ var VONG = {
     {deutsch: "nutzen", vong: "nützen"},
     {deutsch: "nächst", vong: "näschd"},
     {deutsch: "lecker", vong: "legger"},
-    {deutsch: "gerichte", vong: "geriechte"}
+    {deutsch: "gerichte", vong: "geriechte"},
+    {deutsch: "folge", vong: "stalke"},
+    {deutsch: "twittere", vong: "babbele"},
+    {deutsch: "nachricht", vong: "naschrichten"}
   ],
   start: function () {
       try {
