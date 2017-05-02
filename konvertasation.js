@@ -68,6 +68,7 @@ var VONG = {
     {deutsch: "br", vong: "pr"},
     {deutsch: "halb", vong: "semi"},
     {deutsch: "funktioniert", vong: "worked"},
+    {deutsch: "leben", vong: "life"},
     {deutsch: "ende", vong: "drop"},
     {deutsch: "teilen", vong: "teilem"},
     {deutsch: "gefällt", vong: "gefellt"},
