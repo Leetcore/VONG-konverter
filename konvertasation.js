@@ -95,7 +95,7 @@ var VONG = {
       try {
           // finde 1 inhalt wo nicht vong ist
           for (var matchIndex = 0; matchIndex < VONG.matchList.length; matchIndex++) {
-              var elements = document.querySelectorAll(VONG.matchList[matchIndex] +':not(.'+ VONG.className +')')
+              var elements = document.querySelectorAll(VONG.matchList[matchIndex] +':not(.'+ VONG.className +'):not(#ChatTabsPagelet)')
               for (var elementIndex = 0; elementIndex < elements.length && elementIndex < 50; elementIndex++) {
                   VONG.konversator(elements[elementIndex])
               }
@@ -114,7 +114,7 @@ var VONG = {
               for (var x = 0; x < VONG.VONGliste.length; x++) {
                   var walk = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
                   while (item = walk.nextNode()) {
-                      if (item.nodeName == 'PRE' || item.nodeName == 'TEXTAREA') {
+                      if (item.nodeName == 'PRE' || item.nodeName == 'TEXTAREA' || item.contentEditable == "inherit" || item.contentEditable == "true") {
                         break;
                       }
                       if (item.nodeName == '#text') {
