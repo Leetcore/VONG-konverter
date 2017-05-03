@@ -1,16 +1,16 @@
 var VONG = {
   timer: 500,
   className: "itsVONG",
-  matchList: ['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'button', 'span', 'a'],
+  matchList: ['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'button', 'a'],
   VONGliste: [
-    {deutsch: "eine", vong: "1"},
-    {deutsch: "eins", vong: "1"},
-    {deutsch: "einen", vong: "1"},
     {deutsch: "einem", vong: "1"},
+    {deutsch: "einen", vong: "1"},
+    {deutsch: "eins", vong: "1"},
+    {deutsch: "eine", vong: "1"},
     {deutsch: "ein", vong: "1"},
     {deutsch: "der", vong: "de"},
     {deutsch: "die", vong: "de"},
-    {deutsch: "das", vong: "de"},
+    {deutsch: "das", vong: "des"},
     {deutsch: "was", vong: "watt"},
     {deutsch: "bist", vong: "bimst"},
     {deutsch: "vong", vong: "von"},
@@ -89,7 +89,11 @@ var VONG = {
     {deutsch: "gerichte", vong: "geriechte"},
     {deutsch: "folge", vong: "stalke"},
     {deutsch: "twittere", vong: "babbele"},
-    {deutsch: "nachricht", vong: "naschrichten"}
+    {deutsch: "nachricht", vong: "naschrichten"},
+    {deutsch: "schlecht", vong: "bad"},
+    {deutsch: "hübsch", vong: "nice"},
+    {deutsch: "toll", vong: "nice"},
+    {deutsch: "perfekt", vong: "nice"}
   ],
   start: function () {
       try {
@@ -114,7 +118,7 @@ var VONG = {
               for (var x = 0; x < VONG.VONGliste.length; x++) {
                   var walk = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
                   while (item = walk.nextNode()) {
-                      if (item.nodeName == 'PRE' || item.nodeName == 'TEXTAREA' || item.contentEditable == "inherit" || item.contentEditable == "true") {
+                      if (item.nodeName == 'PRE' || item.nodeName == 'TEXTAREA') {
                         break;
                       }
                       if (item.nodeName == '#text') {
